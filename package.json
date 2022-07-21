@@ -1,0 +1,18 @@
+{
+  "name": "semantic-release",
+  "version": "2.0.0",
+  "description": "GitHub action to generate dot npmrc for using GitHub npm registry.",
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ecsumed/helm-ci-cd.git"
+  },
+  "author": "",
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^19.0.3",
+    "semantic-release-helm": "^2.1.0"
+  }
+}

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: nginx-hello
+description: Deploys a simple nginx app
+type: application
+version: 1.0.0
+appVersion: 2.0.0

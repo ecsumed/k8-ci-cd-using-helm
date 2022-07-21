@@ -1,0 +1,7 @@
+
+app:
+  name: nginx-hello
+  containerPort: 8080
+  image:
+    name: ecsumed/helm-ci-cd
+    tag: latest

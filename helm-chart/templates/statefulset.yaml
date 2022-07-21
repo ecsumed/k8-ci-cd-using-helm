@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.app.name }}
+  serviceName: "nginx"
+  replicas: 2 # by default is 1
+  minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app.name }}
+    spec:
+      terminationGracePeriodSeconds: 10
+      volumes:
+        - name: mytest-storage
+          persistentVolumeClaim:
+            claimName: mytest-pv-claim
+      containers:
+      - name: {{ .Values.app.name }}
+        image: "{{ .Values.app.image.name }}:{{ .Values.app.image.tag }}"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "64Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: {{ .Values.app.containerPort }}
+          name: web
+        volumeMounts:
+          - mountPath: "/var/www/mytest"
+            name: mytest-storage
