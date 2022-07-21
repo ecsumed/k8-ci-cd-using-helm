@@ -1,6 +1,6 @@
 
 # K8 ci/cd
-A simple k8 full-automated deployment using helm and github actions
+A simple full-automated ci/cd deployment to k8 using helm and github actions
 
 ## Stack
 * Kubernetes
